@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getCards } from '../classes/db';
 
 @Component({
   selector: 'app-table',
@@ -7,23 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  elements: any[] = [
-    {
-      name: "testName",
-      id: "test",
-      imageUrl: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409741&type=card"
-    },
-    {
-      name: "test2",
-      id: "tesasdasdt",
-      imageUrl: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409741&type=card"
-    }
-  ]
+  searchString: string = "";
+
+  elements: any[] = []
 
   constructor() { }
 
   ngOnInit(): void {
 
+  }
+
+  async searchElements() {
+    let cards = await getCards(this.searchString);
+    this.elements = cards;
   }
 
 }

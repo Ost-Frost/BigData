@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ElementComponent } from './element/element.component';
+import { PrimengModule } from './primeng.module';
 import { TableComponent } from './table/table.component';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { TableComponent } from './table/table.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PrimengModule
   ],
   providers: [],
   bootstrap: [AppComponent]
