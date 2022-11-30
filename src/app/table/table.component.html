@@ -1,0 +1,8 @@
+<table>
+    <tr>
+        <th>Bild</th>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    <tr app-element [name]="element.name" [id]="element.id" [imageUrl]="element.imageUrl" *ngFor="let element of elements"></tr>
+</table>
