@@ -4,6 +4,6 @@ services:
  devops:
   build:
    context: .
-   dockerfile: ./dockerfile
+   dockerfile: ./Dockerfile
   ports:
-   - "4800:4800"
+   - "4200:4200"

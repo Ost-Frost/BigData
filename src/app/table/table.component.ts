@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { getCards } from '../classes/db';
 
 @Component({
   selector: 'app-table',
@@ -19,7 +18,8 @@ export class TableComponent implements OnInit {
   }
 
   async searchElements() {
-    let cards = await getCards(this.searchString);
+    let response = await fetch("search?name=" + this.searchString);
+    let cards = await response.json() as any[];
     this.elements = cards;
   }
 
